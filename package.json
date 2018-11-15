@@ -1,0 +1,44 @@
+{
+  "name": "d3-force-reuse",
+  "version": "0.0.1",
+  "description": "Fast force-directed graph layout by reusing Barnes Hut approximations.",
+  "keywords": [
+    "d3",
+    "d3-module",
+    "layout",
+    "network",
+    "graph",
+    "force",
+    "verlet",
+    "infovis"
+  ],
+  "homepage": "https://github.com/twosixlabs/d3-force-reuse/",
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Robert Gove",
+    "url": "http://rpgove.com"
+  },
+  "main": "build/d3-force-reuse.js",
+  "module": "index",
+  "jsnext:main": "index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twosixlabs/d3-force-reuse.git"
+  },
+  "scripts": {
+    "pretest": "rm -rf build && mkdir build && rollup -c --banner \"$(preamble)\"",
+    "test": "tape 'test/**/*-test.js' && eslint index.js src",
+    "prepare": "npm run test && uglifyjs -b beautify=false,preamble=\"'$(preamble)'\" build/d3-force-reuse.js -c -m -o build/d3-force-reuse.min.js",
+    "postpublish": "git push && git push --tags && zip -j build/d3-force-reuse.zip -- LICENSE README.md build/d3-force-reuse.js build/d3-force-reuse.min.js"
+  },
+  "devDependencies": {
+    "eslint": "4",
+    "package-preamble": "0.1",
+    "rollup": "0.50",
+    "tape": "4",
+    "uglify-js": "3"
+  },
+  "dependencies": {
+    "d3-quadtree": "^1.0.3"
+  }
+}
