@@ -28,7 +28,7 @@ export default function() {
   }
 
   updateClosure = function () {
-    return function (i, nodes) {
+    return function (i) {
       if (i % 13 === 0) {
         return true;
       } else {
