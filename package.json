@@ -1,6 +1,6 @@
 {
   "name": "d3-force-reuse",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Fast force-directed graph layout by reusing Barnes Hut approximations.",
   "keywords": [
     "d3",
@@ -26,15 +26,14 @@
     "url": "https://github.com/twosixlabs/d3-force-reuse.git"
   },
   "scripts": {
-    "pretest": "rm -rf build && mkdir build && rollup -c --banner \"$(preamble)\"",
+    "pretest": "rm -rf build && mkdir build && rollup -c",
     "test": "tape 'test/**/*-test.js' && eslint index.js src",
-    "prepare": "npm run test && uglifyjs -b beautify=false,preamble=\"'$(preamble)'\" build/d3-force-reuse.js -c -m -o build/d3-force-reuse.min.js",
+    "prepare": "npm run test && uglifyjs build/d3-force-reuse.js -c -m --comments '/Copyright/' -o build/d3-force-reuse.min.js",
     "postpublish": "git push && git push --tags && zip -j build/d3-force-reuse.zip -- LICENSE README.md build/d3-force-reuse.js build/d3-force-reuse.min.js"
   },
   "devDependencies": {
     "eslint": "4",
-    "package-preamble": "0.1",
-    "rollup": "0.50",
+    "rollup": "0.64",
     "tape": "4",
     "uglify-js": "3"
   },
