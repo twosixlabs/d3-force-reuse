@@ -4,7 +4,9 @@ This module includes `d3.forceManyBodyReuse()`, a faster version of the repulsiv
 
 How does it achieve the performance speedup? The standard D3 algorithm uses the [Barnes–Hut approximation](https://en.wikipedia.org/wiki/Barnes–Hut_simulation) to speed up the force calculations, which bases the force approximations on a quadtree that is recalculated after every tick of the layout algorithm. To reduce the runtime, `d3.forceManyBodyReuse()` only recalculates the quadtree once every 13 ticks. Experiments show that this is enough to achieve good quality graph layouts while still greatly speeding the algorithm.
 
-If you use this module, please cite the following paper, which contains more detail on the algorithm and its evaluation:
+[This blog post](https://www.twosixlabs.com/faster-force-directed-graph-layouts-by-reusing-force-approximations/) discusses this in more detail, and [the research paper](https://osf.io/wgzn5/) contains the details of the algorithm experiments and their results.
+
+If you use this module, please cite the following research paper:
 
 Robert Gove. "It Pays to Be Lazy: Reusing Force Approximations to Compute Better Graph Layouts Faster." Proceedings of Forum Media Technology, 2018. [Preprint PDF.](https://osf.io/wgzn5/)
 
