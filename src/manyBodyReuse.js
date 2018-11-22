@@ -121,6 +121,11 @@ export default function() {
       y = quad.data.y - node.y;
       l = x * x + y * y;
 
+      // Limit forces for very close nodes; randomize direction if coincident.
+      if (x === 0) x = jiggle(), l += x * x;
+      if (y === 0) y = jiggle(), l += y * y;
+      if (l < distanceMin2) l = Math.sqrt(distanceMin2 * l);
+
       w = strengths[quad.data.index] * alpha / l;
 
       node.vx += x * w;
