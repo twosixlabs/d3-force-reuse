@@ -8,7 +8,8 @@ How does it achieve the performance speedup? The standard D3 algorithm uses the 
 
 If you use this module, please cite the following research paper:
 
-Robert Gove. "It Pays to Be Lazy: Reusing Force Approximations to Compute Better Graph Layouts Faster." Proceedings of Forum Media Technology, 2018. [Preprint PDF.](https://osf.io/wgzn5/)
+
+Robert Gove. "It Pays to Be Lazy: Reusing Force Approximations to Compute Better Graph Layouts Faster." In Proceedings of the 11th Forum Media Technology (2018), pp. 43-51. [Preprint PDF.](https://osf.io/wgzn5/)
 
 ## Credit
 
